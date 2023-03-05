@@ -1,15 +1,26 @@
 import './style.css';
-const BoxColor = ({ r, g, b }) => {
+
+const BoxColor = (props) => {
+  const { r, g, b } = props;
+
+  let rgbColor = `rgb(${r}, ${g}, ${b})`;
+
+  const style = {
+    background: rgbColor,
+  };
+
   return (
     <div className="">
       <div
         className="box-color"
-        style={{ backgroundColor: `rgb(${r}, ${g}, ${b})` }}
+        // style={{ backgroundColor: `rgb(${r}, ${g}, ${b})` }}
+        style={style}
       >
         <p>
-          rgb({r}, {g}, {b})
+          {rgbColor}
+          {/* rgb({r}, {g}, {b}) */}
         </p>
-        <p>#ff0000</p>
+        {/* <p>{hexValueT oDisplay}</p> */}
       </div>
     </div>
   );
